@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.gabriaum.service'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compileOnly('org.projectlombok:lombok:1.18.28')
+    annotationProcessor('org.projectlombok:lombok:1.18.28')
+
+    implementation('org.springframework.boot:spring-boot-starter:2.5.5')
+    implementation('org.springframework.boot:spring-boot-starter-web:2.5.5')
+}
