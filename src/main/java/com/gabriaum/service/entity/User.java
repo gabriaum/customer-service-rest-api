@@ -3,6 +3,7 @@ package com.gabriaum.service.entity;
 import com.gabriaum.service.dto.UserDTO;
 import com.gabriaum.service.entity.type.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.List;
@@ -24,15 +25,19 @@ public class User {
     private UUID secretId = UUID.randomUUID();
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message = "Email is mandatory")
     private String email;
 
     @Column(nullable = false)
+    @NotBlank(message = "Password is mandatory")
     private String password;
 
     @Column(nullable = false)
+    @NotBlank(message = "First name is mandatory")
     private String firstName;
 
     @Column(nullable = false)
+    @NotBlank(message = "Last name is mandatory")
     private String lastName;
 
     @Enumerated(EnumType.STRING)
