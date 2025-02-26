@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: CustomerService
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/customerservice
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#  flyway:
+#    baseline-on-migrate: true
+#    enabled: true
+#    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+    org.hibernate.sql: debug
+    org.springframework: info
